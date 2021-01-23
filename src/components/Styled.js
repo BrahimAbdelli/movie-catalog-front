@@ -4,4 +4,16 @@ const PageWrapper = styled.div``;
 
 const MovieListTitle = styled.h1``;
 
-export { PageWrapper, MovieListTitle };
+const SearchBox = styled.div``;
+
+const SearchBoxInput = styled.input``;
+
+const SearchBoxButton = styled.button``;
+
+export {
+  PageWrapper,
+  MovieListTitle,
+  SearchBox,
+  SearchBoxInput,
+  SearchBoxButton,
+};
