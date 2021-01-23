@@ -30,6 +30,14 @@ const moviesSlice = createSlice({
         state.movies.splice(index, 1);
       }
     },
+    updateMovie(state,action){
+      state.selectedMovie = null;
+      const payload = action.payload;
+      const index = state.movies.findIndex((item) => item._id=== payload._id);
+      if (index !== -1) {
+        state.movies[index]=payload;
+      }
+    }
   },
 });
 
@@ -39,6 +47,7 @@ export const {
   unselectMovie,
   deleteMovie,
   setAction,
+  updateMovie,
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => {

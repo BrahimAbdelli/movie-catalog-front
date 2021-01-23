@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectAction, selectSelectedMovie } from "./redux/movies/moviesSlice";
 import MovieDetails from "./pages/MovieDetails";
 import AddMovie from "./pages/AddMovie";
+import UpdateMovie from "./pages/UpdateMovie";
 
 function App() {
   const selected = useSelector(selectSelectedMovie);
@@ -13,6 +14,7 @@ function App() {
         {action ==="details" && <MovieDetails movie={selected} />}
         {action ==="list" && <MovieList/>}
         {action ==="add" && <AddMovie />}
+        {action ==="update" && <UpdateMovie movie={selected} />}
     </div>
   );
 }

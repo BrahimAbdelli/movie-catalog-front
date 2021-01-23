@@ -5,11 +5,8 @@ import {
   PageWrapperDetail,
   ReturnButton,
   MovieTitle,
-  GenreList,
 } from "../components/Styled";
 import { useDispatch } from "react-redux";
-import { unselectMovie, setAction } from "../redux/movies/moviesSlice";
-import { useEffect, useState } from "react";
 import { unselectMovie, deleteMovie, setAction } from "../redux/movies/moviesSlice";
 import { queryApi } from "../utils/queryApi";
 
@@ -45,6 +42,7 @@ export default function MovieDetails(props) {
         <MovieInfo>Genres:{props.movie?.genre}</MovieInfo>
         <ReturnButton onClick={unselect}>Back to search results</ReturnButton>
         <ReturnButton onClick={handleDelete}>Delete</ReturnButton>
+        <ReturnButton onClick={handleUpdate}>Update</ReturnButton>
       </MovieInfoWrapper>
     </PageWrapperDetail>
   );
