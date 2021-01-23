@@ -10,6 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { unselectMovie, setAction } from "../redux/movies/moviesSlice";
 import { useEffect, useState } from "react";
+import { unselectMovie, deleteMovie, setAction } from "../redux/movies/moviesSlice";
 import { queryApi } from "../utils/queryApi";
 
 export default function MovieDetails(props) {
@@ -19,6 +20,15 @@ export default function MovieDetails(props) {
     dispatch(setAction('list'))
   }
 
+  async function handleDelete() {
+    const [, err] = await queryApi("/"+props.movie._id, null, "DELETE")
+    if(err) {console.log(err)}
+    else {dispatch(deleteMovie(props.movie));
+    dispatch(setAction('list'))}
+  }
+  async function handleUpdate(){
+    dispatch(setAction('update'))
+  }
   return (
     <PageWrapperDetail>
       <MovieTitle>{props.movie?.title}</MovieTitle>
@@ -34,6 +44,7 @@ export default function MovieDetails(props) {
         <MovieInfo>Rating:{props.movie?.rating}</MovieInfo>
         <MovieInfo>Genres:{props.movie?.genre}</MovieInfo>
         <ReturnButton onClick={unselect}>Back to search results</ReturnButton>
+        <ReturnButton onClick={handleDelete}>Delete</ReturnButton>
       </MovieInfoWrapper>
     </PageWrapperDetail>
   );

@@ -22,6 +22,14 @@ const moviesSlice = createSlice({
     setAction(state, action) {
       state.action = action.payload;
       },
+    deleteMovie(state, action) {
+      state.selectedMovie = null;
+      const payload = action.payload;
+      const index = state.movies.findIndex((item) => item._id=== payload._id);
+      if (index !== -1) {
+        state.movies.splice(index, 1);
+      }
+    },
   },
 });
 
@@ -29,6 +37,7 @@ export const {
   populateMovies,
   selectMovie,
   unselectMovie,
+  deleteMovie,
   setAction,
 } = moviesSlice.actions;
 
