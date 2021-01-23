@@ -15,10 +15,17 @@ const moviesSlice = createSlice({
     selectMovie(state, action) {
       state.selectedMovie = action.payload;
     },
+    unselectMovie(state) {
+      state.selectedMovie = null;
+    },
   },
 });
 
-export const { populateMovies, selectMovie } = moviesSlice.actions;
+export const {
+  populateMovies,
+  selectMovie,
+  unselectMovie,
+} = moviesSlice.actions;
 
 export const selectMovies = (state) => {
   return state.movies.movies;
