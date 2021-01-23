@@ -75,8 +75,43 @@ const MovieTitle = styled.h2`
   color: #c62828;
 `;
 
+const MovieInfo = styled.p`
+  color: #c62828;
+`;
+
+const PageWrapperDetail = styled(PageWrapper)`
+  text-align: left;
+`;
+
+const MovieInfoWrapper = styled.div`
+  margin-left: 40px;
+`;
+
+const ReturnButton = styled.button`
+  width: 15%;
+  border-radius: 5px;
+  min-height: 31px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  color: #c62828;
+  border: solid 2px #c62828;
+`;
+
+const GenreList = styled.ul`
+  list-style: none;
+  display: flex;
+  & > li {
+    color: white;
+    background-color: #c62828;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 5px;
+  }
+`;
+
 export {
   PageWrapper,
+  PageWrapperDetail,
   MovieListTitle,
   SearchBox,
   SearchBoxInput,
@@ -85,4 +120,8 @@ export {
   MovieWrapper,
   MovieImage,
   MovieTitle,
+  MovieInfo,
+  MovieInfoWrapper,
+  ReturnButton,
+  GenreList,
 };
