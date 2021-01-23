@@ -48,12 +48,18 @@ const MoviesListWrapper = styled.div`
 `;
 
 const MovieWrapper = styled.div`
+  cursor: pointer;
   width: 25%;
+  background-color: transparent;
   @media only screen and (max-width: 1024px) {
     width: 50%;
   }
   @media only screen and (max-width: 768px) {
     width: 100%;
+  }
+  transition: background-color 0.5s linear;
+  :hover {
+    background-color: #ffebee;
   }
 `;
 
