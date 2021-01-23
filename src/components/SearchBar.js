@@ -21,7 +21,7 @@ export default function SearchBar() {
     const delayDebounceFn = setTimeout(async () => {
       if (keyword) {
         const [res] = await queryApi(
-          "movie?api_key=efb3d7bd52872c1d07a1787a51d66394&query=" +
+          "search/movie?api_key=efb3d7bd52872c1d07a1787a51d66394&query=" +
             keyword +
             "&language=en-US"
         );
