@@ -17,9 +17,8 @@ export async function queryApi(
   try {
     let config = {
       method,
-      url: `https://api.themoviedb.org/3/${endpoint}`,
+      url: `${api.defaults.baseURL}${endpoint}`,
     };
-
     if (body) {
       if (method.toUpperCase() === "GET")
         config = {
