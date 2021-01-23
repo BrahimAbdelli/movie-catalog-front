@@ -41,13 +41,33 @@ const SearchBoxButton = styled.button`
   }
 `;
 
-const MoviesListWrapper = styled.div``;
+const MoviesListWrapper = styled.div`
+  margin: 20px 2.5%;
+  display: flex;
+  flex-flow: wrap;
+`;
 
-const MovieWrapper = styled.div``;
+const MovieWrapper = styled.div`
+  width: 25%;
+  @media only screen and (max-width: 1024px) {
+    width: 50%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
 
-const MovieImage = styled.img``;
+const MovieImage = styled.img`
+  max-width: 70%;
+  max-width: 70%;
+  border: solid #fce4ec;
+`;
 
-const MovieTitle = styled.h2``;
+const MovieTitle = styled.h2`
+  max-width: 70%;
+  margin: auto;
+  color: #c62828;
+`;
 
 export {
   PageWrapper,
