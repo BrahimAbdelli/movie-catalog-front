@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const PageWrapper = styled.div``;
 
-const MovieListTitle = styled.h1``;
+const MovieListTitle = styled.h1`
+  color: #c62828;
+`;
 
 const SearchBox = styled.div`
   margin: 0 20px;
