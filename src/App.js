@@ -1,19 +1,16 @@
 import "./App.css";
 import MovieList from "./pages/MovieList";
 import { useSelector } from "react-redux";
-import { selectSelectedMovie } from "./redux/movies/moviesSlice";
+import { selectAction, selectSelectedMovie } from "./redux/movies/moviesSlice";
 import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   const selected = useSelector(selectSelectedMovie);
-
+  const action = useSelector(selectAction);
   return (
     <div className="App">
-      {!selected?.title ? (
-        <MovieList></MovieList>
-      ) : (
-        <MovieDetails movie={selected} />
-      )}
+        {action ==="details" && <MovieDetails movie={selected} />}
+        {action ==="list" && <MovieList/>}
     </div>
   );
 }

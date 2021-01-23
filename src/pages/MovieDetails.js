@@ -8,7 +8,7 @@ import {
   GenreList,
 } from "../components/Styled";
 import { useDispatch } from "react-redux";
-import { unselectMovie } from "../redux/movies/moviesSlice";
+import { unselectMovie, setAction } from "../redux/movies/moviesSlice";
 import { useEffect, useState } from "react";
 import { queryApi } from "../utils/queryApi";
 
@@ -16,6 +16,7 @@ export default function MovieDetails(props) {
   const dispatch = useDispatch();
   function unselect() {
     dispatch(unselectMovie(props.movie));
+    dispatch(setAction('list'))
   }
 
   return (

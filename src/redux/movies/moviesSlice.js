@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
   movies: [],
   selectedMovie: {},
+  action: "list",
 };
 
 const moviesSlice = createSlice({
@@ -18,6 +19,9 @@ const moviesSlice = createSlice({
     unselectMovie(state) {
       state.selectedMovie = null;
     },
+    setAction(state, action) {
+      state.action = action.payload;
+      },
   },
 });
 
@@ -25,6 +29,7 @@ export const {
   populateMovies,
   selectMovie,
   unselectMovie,
+  setAction,
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => {
@@ -36,3 +41,7 @@ export const selectSelectedMovie = (state) => {
 };
 
 export default moviesSlice.reducer;
+
+export const selectAction = (state) => {
+  return state.movies.action;
+};

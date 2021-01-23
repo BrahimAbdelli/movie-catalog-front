@@ -1,10 +1,11 @@
 import { MovieWrapper, MovieImage, MovieTitle } from "./Styled";
 import { useDispatch } from "react-redux";
-import { selectMovie } from "../redux/movies/moviesSlice";
+import { selectMovie, setAction } from "../redux/movies/moviesSlice";
 export default function Movie(props) {
   const dispatch = useDispatch();
   function select() {
     dispatch(selectMovie(props.movie));
+    dispatch(setAction('details'))
   }
   return (
     <MovieWrapper onClick={select}>
