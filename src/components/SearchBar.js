@@ -10,22 +10,18 @@ export default function SearchBar() {
   async function callApi() {
     if (keyword) {
       const [res] = await queryApi(
-        "movie?api_key=efb3d7bd52872c1d07a1787a51d66394&query=" +
-          keyword +
-          "&language=en-US"
+        "?keyword=" + keyword
       );
-      if (res?.results) dispatch(populateMovies(res.results));
+      if (res) dispatch(populateMovies(res));
     }
   }
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (keyword) {
         const [res] = await queryApi(
-          "search/movie?api_key=efb3d7bd52872c1d07a1787a51d66394&query=" +
-            keyword +
-            "&language=en-US"
+          "?keyword=" + keyword
         );
-        if (res?.results) dispatch(populateMovies(res.results));
+        if (res) dispatch(populateMovies(res));
       }
     }, 1000);
 

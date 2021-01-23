@@ -10,8 +10,8 @@ export default function Movie(props) {
     <MovieWrapper onClick={select}>
       <MovieImage
         src={
-          props.movie?.poster_path
-            ? `http://image.tmdb.org/t/p/w185${props.movie?.poster_path}`
+          props.movie?.image
+            ? process.env.REACT_APP_API_URL_UPLOADS + props.movie?.image
             : `https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`
         }
       />
